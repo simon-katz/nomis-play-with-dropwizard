@@ -27,7 +27,7 @@ public class HelloWorldResource {
 
     @GET
     @Timed
-    public Saying sayHello(@QueryParam("name") Optional<String> name) {
+    public Saying thisNameCanBeAnthing(@QueryParam("name") Optional<String> name) { // The method name can be anything. Interesting.
         return new Saying(counter.incrementAndGet(),
                 String.format(template, name.or(defaultName)));
     }
