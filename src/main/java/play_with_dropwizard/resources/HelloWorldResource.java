@@ -17,7 +17,7 @@ public class HelloWorldResource {
 
     private final String template;
     private final String defaultName;
-    private final AtomicLong counter;
+    private final AtomicLong counter; // Note that "we recommend that resources be stateless/immutable"
 
     public HelloWorldResource(String template, String defaultName) {
         this.template = template;

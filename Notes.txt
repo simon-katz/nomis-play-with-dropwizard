@@ -13,5 +13,10 @@
 
   - Duplication of info across yml file and config files. (Names.)
 
+- Compare `Saying` to what you would have in Clojure, and cry.
+
+- Compare resources and adding resources to the environment with the equivalent
+  Clojure, and cry.
+
 
 TODO:
