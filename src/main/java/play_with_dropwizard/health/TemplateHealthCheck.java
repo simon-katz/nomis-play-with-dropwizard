@@ -3,6 +3,7 @@ package play_with_dropwizard.health;
 import com.yammer.metrics.core.HealthCheck;
 
 public class TemplateHealthCheck extends HealthCheck {
+
     private final String template;
 
     public TemplateHealthCheck(String template) {
