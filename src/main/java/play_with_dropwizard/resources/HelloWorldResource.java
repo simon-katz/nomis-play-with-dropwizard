@@ -1,7 +1,8 @@
-package play_with_dropwizard;
+package play_with_dropwizard.resources;
 
 import com.google.common.base.Optional;
 import com.yammer.metrics.annotation.Timed;
+import play_with_dropwizard.core.Saying;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

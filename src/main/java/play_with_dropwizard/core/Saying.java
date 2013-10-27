@@ -1,4 +1,4 @@
-package play_with_dropwizard;
+package play_with_dropwizard.core;
 
 public class Saying {
 

@@ -4,6 +4,7 @@ import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.config.Bootstrap;
 import com.yammer.dropwizard.config.Environment;
 import play_with_dropwizard.health.TemplateHealthCheck;
+import play_with_dropwizard.resources.HelloWorldResource;
 
 public class HelloWorldService extends Service<HelloWorldConfiguration> {
 
