@@ -27,14 +27,16 @@ public class HelloWorldService extends Service<HelloWorldConfiguration> {
 
         final String template = configuration.getTemplate();
         final String defaultName = configuration.getDefaultName();
+
         environment.addResource(new HelloWorldResource(template, defaultName));
+
         environment.addHealthCheck(new TemplateHealthCheck(template));
 
-        HttpConfiguration foo = configuration.getHttpConfiguration();
+        HttpConfiguration httpConfig = configuration.getHttpConfiguration();
         logger.info("httpConfiguration = ["
-                + configuration.getHttpConfiguration().getPort()
+                + httpConfig.getPort()
                 + ", "
-                + configuration.getHttpConfiguration().getAdminPort()
+                + httpConfig.getAdminPort()
                 + "]");
     }
 }
