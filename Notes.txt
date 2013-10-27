@@ -1,0 +1,17 @@
+- Dropwizard "wiring":
+
+  - How does it find the yml file?
+    The file name is a parameter that's passed in.
+
+  - How does it know your service class?
+    That's where your `main` method is.
+
+  - How does it know the configuration class?
+    (It creates an instance of this and passes it to your `run` method.)
+    I guess it knows this because the service class is parameterised with the
+    configuration class.
+
+  - Duplication of info across yml file and config files. (Names.)
+
+
+TODO:
