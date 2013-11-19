@@ -17,4 +17,11 @@ public class Saying {
     public String getContent() {
         return content;
     }
+
+    public String getP1() {
+        return "P1 -- JSON-ified";
+    }
+    public String p2() {
+        return "P2 -- not JSON-ified";
+    }
 }

@@ -17,7 +17,10 @@ public class HelloWorldResource {
 
     private final String template;
     private final String defaultName;
-    private final AtomicLong counter; // Note that "we recommend that resources be stateless/immutable"
+
+    // Note that "we recommend that resources be stateless/immutable".
+    // -- so they should put this in the core/domain model part of the app.
+    private final AtomicLong counter;
 
     public HelloWorldResource(String template, String defaultName) {
         this.template = template;
@@ -27,7 +30,8 @@ public class HelloWorldResource {
 
     @GET
     @Timed
-    public Saying thisNameCanBeAnthing(@QueryParam("name") Optional<String> name) { // The method name can be anything. Interesting.
+    // The method name can be anything. Interesting. And why is it not greyed out in IDEA?
+    public Saying thisNameCanBeAnything(@QueryParam("name") Optional<String> name) {
         return new Saying(counter.incrementAndGet(),
                 String.format(template, name.or(defaultName)));
     }

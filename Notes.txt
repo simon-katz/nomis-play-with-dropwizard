@@ -1,3 +1,7 @@
+- See http://dropwizard.readthedocs.org/en/latest/getting-started.html
+  - that was the starting point for this.
+
+
 - Dropwizard "wiring":
 
   - How does it find the yml file?
@@ -13,10 +17,20 @@
 
   - Duplication of info across yml file and config files. (Names.)
 
+  - Duplication of existence of resource classes and adding them to the environment.
+    (In Clojure, maybe a bit like calling a function to create a handler rather than
+     having an inline handler.)
+
+  - How does it call `Saying.g etId` and `Saying.g etContent`?
+    - And Plop.
+    - Ah...
+      "It uses the Java Bean standard for the id and content properties."
+      "This allows Jackson to serialize it to the JSON we need."
+
 - Compare `Saying` to what you would have in Clojure, and cry.
 
 - Compare resources and adding resources to the environment with the equivalent
   Clojure, and cry.
-
+  And the health check.
 
 TODO:

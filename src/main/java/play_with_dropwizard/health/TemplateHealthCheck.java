@@ -7,7 +7,7 @@ public class TemplateHealthCheck extends HealthCheck {
     private final String template;
 
     public TemplateHealthCheck(String template) {
-        super("template");
+        super("xxxxtemplate");
         this.template = template;
     }
 
