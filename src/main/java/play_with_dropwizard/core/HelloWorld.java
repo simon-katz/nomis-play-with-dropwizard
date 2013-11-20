@@ -1,12 +1,16 @@
 package play_with_dropwizard.core;
 
+import java.util.concurrent.atomic.AtomicLong;
+
 public class HelloWorld {
+
+    private static AtomicLong counter = new AtomicLong();
 
     private final long id;
     private final String content;
 
-    public HelloWorld(long id, String content) {
-        this.id = id;
+    public HelloWorld(String content) {
+        this.id = counter.incrementAndGet();
         this.content = content;
     }
 
