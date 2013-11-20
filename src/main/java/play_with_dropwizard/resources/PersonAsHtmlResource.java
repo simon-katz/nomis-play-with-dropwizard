@@ -11,9 +11,9 @@ import javax.ws.rs.core.MediaType;
 
 @Path("/person/{firstName}")
 @Produces(MediaType.TEXT_HTML)
-public class PersonResource {
+public class PersonAsHtmlResource {
 
-    public PersonResource() {
+    public PersonAsHtmlResource() {
     }
 
     @GET

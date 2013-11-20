@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @Path("/hello-world")
 @Produces(MediaType.APPLICATION_JSON)
-public class HelloWorldResource {
+public class HelloWorldAsJsonResource {
 
     private final String template;
     private final String defaultName;
@@ -22,7 +22,7 @@ public class HelloWorldResource {
     // -- so they should put this in the core/domain model part of the app.
     private final AtomicLong counter;
 
-    public HelloWorldResource(String template, String defaultName) {
+    public HelloWorldAsJsonResource(String template, String defaultName) {
         this.template = template;
         this.defaultName = defaultName;
         this.counter = new AtomicLong();
@@ -30,7 +30,7 @@ public class HelloWorldResource {
 
     @GET
     @Timed
-    // The method name can be anything. Interesting. And why is it not greyed out in IDEA?
+    // The method name can be anything. Interesting.
     public HelloWorld thisNameCanBeAnything(@QueryParam("name") Optional<String> name) {
         return new HelloWorld(counter.incrementAndGet(),
                 String.format(template, name.or(defaultName)));

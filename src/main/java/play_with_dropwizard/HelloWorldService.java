@@ -8,9 +8,9 @@ import com.yammer.dropwizard.views.ViewBundle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import play_with_dropwizard.health.TemplateHealthCheck;
-import play_with_dropwizard.resources.HelloWorldAsHTMLResource;
-import play_with_dropwizard.resources.HelloWorldResource;
-import play_with_dropwizard.resources.PersonResource;
+import play_with_dropwizard.resources.HelloWorldAsHtmlResource;
+import play_with_dropwizard.resources.HelloWorldAsJsonResource;
+import play_with_dropwizard.resources.PersonAsHtmlResource;
 
 public class HelloWorldService extends Service<HelloWorldConfiguration> {
 
@@ -32,9 +32,9 @@ public class HelloWorldService extends Service<HelloWorldConfiguration> {
         final String template = configuration.getTemplate();
         final String defaultName = configuration.getDefaultName();
 
-        environment.addResource(new HelloWorldResource(template, defaultName));
-        environment.addResource(new HelloWorldAsHTMLResource(template, defaultName));
-        environment.addResource(new PersonResource());
+        environment.addResource(new HelloWorldAsJsonResource(template, defaultName));
+        environment.addResource(new HelloWorldAsHtmlResource(template, defaultName));
+        environment.addResource(new PersonAsHtmlResource());
 
         environment.addHealthCheck(new TemplateHealthCheck(template));
 

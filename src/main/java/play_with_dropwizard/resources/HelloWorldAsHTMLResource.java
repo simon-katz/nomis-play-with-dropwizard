@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @Path("/hello-world-as-html")
 @Produces(MediaType.TEXT_HTML)
-public class HelloWorldAsHTMLResource {
+public class HelloWorldAsHtmlResource {
 
     private final String template;
     private final String defaultName;
@@ -22,7 +22,7 @@ public class HelloWorldAsHTMLResource {
     // -- so they should put this in the core/domain model part of the app.
     private final AtomicLong counter;
 
-    public HelloWorldAsHTMLResource(String template, String defaultName) {
+    public HelloWorldAsHtmlResource(String template, String defaultName) {
         this.template = template;
         this.defaultName = defaultName;
         this.counter = new AtomicLong();
