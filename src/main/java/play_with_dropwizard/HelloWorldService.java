@@ -4,10 +4,12 @@ import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.config.Bootstrap;
 import com.yammer.dropwizard.config.Environment;
 import com.yammer.dropwizard.config.HttpConfiguration;
+import com.yammer.dropwizard.views.ViewBundle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import play_with_dropwizard.health.TemplateHealthCheck;
 import play_with_dropwizard.resources.HelloWorldResource;
+import play_with_dropwizard.resources.PersonResource;
 
 public class HelloWorldService extends Service<HelloWorldConfiguration> {
 
@@ -18,6 +20,7 @@ public class HelloWorldService extends Service<HelloWorldConfiguration> {
     @Override
     public void initialize(Bootstrap<HelloWorldConfiguration> bootstrap) {
         bootstrap.setName("hello-world"); // (does not need to be same as yml file name)
+        bootstrap.addBundle(new ViewBundle());
      }
 
     @Override
@@ -29,6 +32,7 @@ public class HelloWorldService extends Service<HelloWorldConfiguration> {
         final String defaultName = configuration.getDefaultName();
 
         environment.addResource(new HelloWorldResource(template, defaultName));
+        environment.addResource(new PersonResource());
 
         environment.addHealthCheck(new TemplateHealthCheck(template));
 
