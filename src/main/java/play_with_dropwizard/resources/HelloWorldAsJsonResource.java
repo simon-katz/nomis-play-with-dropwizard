@@ -25,7 +25,6 @@ public class HelloWorldAsJsonResource {
 
     @GET
     @Timed
-    // The method name can be anything. Interesting.
     public HelloWorld thisNameCanBeAnything(@QueryParam("name") Optional<String> name) {
         return new HelloWorld(String.format(template, name.or(defaultName)));
     }

@@ -33,4 +33,6 @@
   Clojure, and cry.
   And the health check.
 
+- GET etc method names can be anything. Interesting.
+
 TODO:
