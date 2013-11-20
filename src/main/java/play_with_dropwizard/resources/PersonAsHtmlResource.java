@@ -1,5 +1,6 @@
 package play_with_dropwizard.resources;
 
+import com.yammer.metrics.annotation.Timed;
 import play_with_dropwizard.core.Person;
 import play_with_dropwizard.views.PersonView;
 
@@ -17,6 +18,7 @@ public class PersonAsHtmlResource {
     }
 
     @GET
+    @Timed
     public PersonView getPerson(@PathParam("firstName") String firstName) {
         return new PersonView(new Person(firstName));
     }
