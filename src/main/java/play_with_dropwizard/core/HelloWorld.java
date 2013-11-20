@@ -1,11 +1,11 @@
 package play_with_dropwizard.core;
 
-public class Saying {
+public class HelloWorld {
 
     private final long id;
     private final String content;
 
-    public Saying(long id, String content) {
+    public HelloWorld(long id, String content) {
         this.id = id;
         this.content = content;
     }

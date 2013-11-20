@@ -2,7 +2,7 @@ package play_with_dropwizard.resources;
 
 import com.google.common.base.Optional;
 import com.yammer.metrics.annotation.Timed;
-import play_with_dropwizard.core.Saying;
+import play_with_dropwizard.core.HelloWorld;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -31,8 +31,8 @@ public class HelloWorldResource {
     @GET
     @Timed
     // The method name can be anything. Interesting. And why is it not greyed out in IDEA?
-    public Saying thisNameCanBeAnything(@QueryParam("name") Optional<String> name) {
-        return new Saying(counter.incrementAndGet(),
+    public HelloWorld thisNameCanBeAnything(@QueryParam("name") Optional<String> name) {
+        return new HelloWorld(counter.incrementAndGet(),
                 String.format(template, name.or(defaultName)));
     }
 }
